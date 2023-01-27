@@ -1,22 +1,39 @@
 import React from 'react'
-import {  useNavigate } from "react-router-dom";
-import axios from 'axios';
 import { useState } from 'react';
+import {  useNavigate } from "react-router-dom";
+import './Login.css'
 import { NavLink } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
-import './Login.css'
-import 'react-toastify/dist/ReactToastify.css';
-function Login() {
+  import 'react-toastify/dist/ReactToastify.css';
+  import axios from 'axios';
+function Signup() {
   let navigate = useNavigate();
+  const [username,setUsername]=useState("");
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
- 
+  const [confirmpassword,setconfirmpassword]=useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email,password)
-         axios.post("https://signup-n0xf.onrender.com/login",{
-      email : email,     
+    console.log(username,email,password)
+    if(password!==confirmpassword)
+    {
+        toast.error('Password do not match', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+    }
+    else{
+         axios.post("https://signup-n0xf.onrender.com/signup",{
+      username : username,
+         email : email,     
       password : password,
+      confirmpassword : confirmpassword
      })
            .then(result=>{
       console.log(result)
@@ -31,7 +48,7 @@ function Login() {
         progress: undefined,
         theme: "dark",
         });
-      navigate('/')
+      navigate('/login')
 
 
      }) 
@@ -51,22 +68,10 @@ function Login() {
             
            }) 
   }
-
+  }
   return (
     <>
     <div className='login_mai'>
-    <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
     <ToastContainer
 position="top-center"
 autoClose={5000}
@@ -87,30 +92,46 @@ theme="dark"
       <div className='login_main'>
       <div className='logoo'>LOGO</div>
         <div className='login_card1'>
-            <h1 className='create_account'>Sign-In</h1>
+            <h1 className='create_account'>Create Account</h1>
 <div className="center">
             <div className="inputbox">
-                <input type="email"  value={email} onChange={(e)=>setEmail(e.target.value)}  required="required" />
-      <span>Email Address</span>
+                <input type="text"value={username} onChange={(e)=>setUsername(e.target.value)} required="required" />
+      <span>Name</span>
     </div>
 </div>
 <div className="center">
             <div className="inputbox">
-                <input type="password"  value={password} onChange={(e)=>setPassword(e.target.value)}  required="required" />
+                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} required="required" />
+      <span>Email</span>
+    </div>
+</div>
+<div className="center">
+            <div className="inputbox">
+                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} required="required" />
       <span>Password</span>
     </div>
 </div>
+<div className="center">
+            <div className="inputbox">
+                <input type="password" value={confirmpassword} onChange={(e)=>setconfirmpassword(e.target.value)} required="required" />
+      <span>Confirm Password</span>
+    </div>
+</div>
  <br></br> <br></br>
+ 
+ {/* <input type="checkbox"/> I Understand and accept the Terms of use and Privacy Policy  */}
 
 <br></br>
-<button className='verify_button'  onClick={handleSubmit}  >Login</button>
+<button className='verify_button' onClick={handleSubmit}>Login</button>
 <br></br>
 
-<p className='already'>Don't have an account?<NavLink to ="/signup">Create Here</NavLink></p>
+<p className='already'>Already have an account?<NavLink to ="/login">Login</NavLink></p>
         </div>
        
 </div>
-</div>
+        
+         
+        </div>
 
     </div>
     </div>
@@ -119,9 +140,4 @@ theme="dark"
   )
 }
 
-export default Login;
-
-
-
-
-
+export default Signup;

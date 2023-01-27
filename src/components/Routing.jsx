@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
+import Login from './Login'
 import Navbar from './Navbar'
+import Signup from './Signup'
 
 function Routing() {
   return (
@@ -8,9 +10,10 @@ function Routing() {
         <Router>
         <Navbar/>
     <Routes>
-    {/* <Route exact path='/c1'element = {<C1_landing />} /> */}
+    <Route path='/login' element={<Login />} />
+    <Route path='/signup' element={<Signup/>}/>
     </Routes>
-    </Router>
+        </Router>
     </>
   )
 }

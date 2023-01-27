@@ -1,0 +1,227 @@
+
+.col-sm-9{
+    border-radius: 20px;
+    background-color: white;
+}
+.login_mai{
+    background-color: #C3CBD0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.logoo{
+    display: none;
+  
+
+}
+
+.login_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;   
+    /* padding:25px; */
+  
+    
+  }
+  .create_account{
+    font-family: Sora;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 0.08em;
+    text-align: left;
+width: 129px;
+height: 40px;
+left: 731px;
+top: 242px;
+font-family: 'Sora';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 40px;
+/* identical to box height, or 133% */
+
+letter-spacing: 0.08em;
+margin-bottom: 100px;
+color: #19236D;
+    
+  }
+  .login_card{
+  width: 668px;
+  height: 480px;
+  left: 644px;
+  top: 394px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 23px;
+  padding-left: 57px;
+  
+  }
+  .login_card1{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* align-items: center */
+  }
+  .email_input{
+    margin-top: 112px;
+    width: 100%;
+    padding: 2px;
+    border: none;
+    display: block;
+    outline: none;
+  }
+  .verify_button{
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.16px;
+    border-radius: 10px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    background-color: #FFD233;
+  width: 558px;
+  height: 45px;
+  left: 700px;
+  top: 652px;
+  border: none;
+  background: #EEB73F;
+  border-radius: 10px;
+  }
+  /* .already_acc{
+    margin-top: 17px;
+  } */
+  .already{
+    display: flex;
+  }
+  
+  
+  .email{
+    border: none;
+  }
+  .center {
+    border-radius: 10px;
+  }
+  .center h1 {
+    font-size: 2em;
+    border-left: 5px solid dodgerblue;
+    padding: 10px;
+    color: #000;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .center .inputbox {
+    position: relative;
+    width: 400px;
+    height: 30px;
+    margin-bottom: 41px;
+     margin-top: 41px;
+     
+  }
+  .center .inputbox input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid #000;
+    outline: none;
+    background: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 0%;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+  .center .inputbox:last-child {
+    margin-bottom: 0;
+  }
+  .center .inputbox span {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-size: 1em;
+    transition: 0.6s;
+    font-family: sans-serif;
+  }
+  .center .inputbox input:focus ~ span,
+  .center .inputbox input:valid ~ span {
+    transform: translateX(-13px) translateY(-35px);
+    font-size: 0.9em;
+    color: #0F62FE;
+    }
+  .center .inputbox [type="button"] {
+    width: 50%;
+    background: 
+    #0B69FF;
+    color: #fff;
+    border: #fff;
+  }
+  .center .inputbox:hover [type="button"] {
+    background: linear-gradient(45deg, greenyellow, dodgerblue);
+  }
+  
+  @media only screen and (max-width: 992px) {
+
+    .login_card1{
+        width: 400px;
+    }
+    .verify_button{
+        width: 100%;
+    }
+    .create_account{
+      letter-spacing: 0.08em;
+        text-align: left;
+    width: 129px;
+    height: 40px;
+    left: 731px;
+    top: 242px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 40px; 
+    }
+  }
+  @media only screen and (max-width: 768px) {
+
+    .login_card1{
+        width: 300px;
+    }
+    .verify_button{
+        width: 100%;
+    }
+    .center .inputbox{
+        width: 100%;
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    
+      .login_main{
+        height:93vh;
+      }
+      .login_card1{
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: left; */
+        /* align-items: center */
+        margin-top: 20px;
+      }
+      .col-sm-3{
+        display: none;
+      }
+      .logoo{
+        display: contents;
+
+        /* padding: 1000px; */
+      }
+
+  }
