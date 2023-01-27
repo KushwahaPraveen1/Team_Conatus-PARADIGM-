@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import img1 from '../assets/illustration.png'
-import './landing_main.css'
+import './Landingmain.css'
 import Experties from './Experties'
 
 
-function Landing_main() {
+function Landingmain() {
   return (
     <>
 
@@ -21,7 +21,7 @@ function Landing_main() {
 </NavLink>
 </div>
 <div className='image'>
-  <img src={img1}/>
+  <img src={img1} alt='hello'/>
 </div>
 </div>
 </div>
@@ -32,4 +32,4 @@ function Landing_main() {
   )
 }
 
-export default Landing_main
+export default Landingmain;
