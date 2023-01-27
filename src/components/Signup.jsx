@@ -8,13 +8,14 @@ import { ToastContainer, toast } from 'react-toastify';
   import axios from 'axios';
 function Signup() {
   let navigate = useNavigate();
-  const [username,setUsername]=useState("");
+  const [inventoryname,setInventoryname]=useState("");
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const [confirmpassword,setconfirmpassword]=useState("");
+  const [phone,setPhone]=useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username,email,password)
+    console.log(inventoryname,email,phone,password)
     if(password!==confirmpassword)
     {
         toast.error('Password do not match', {
@@ -30,10 +31,11 @@ function Signup() {
     }
     else{
          axios.post("https://signup-n0xf.onrender.com/signup",{
-      username : username,
+      inventoryname : inventoryname,
          email : email,     
       password : password,
-      confirmpassword : confirmpassword
+      phone : phone,
+      
      })
            .then(result=>{
       console.log(result)
@@ -95,7 +97,7 @@ theme="dark"
             <h1 className='create_account'>Create Account</h1>
 <div className="center">
             <div className="inputbox">
-                <input type="text"value={username} onChange={(e)=>setUsername(e.target.value)} required="required" />
+                <input type="text"value={inventoryname} onChange={(e)=>setInventoryname(e.target.value)} required="required" />
       <span>Name</span>
     </div>
 </div>
@@ -103,6 +105,12 @@ theme="dark"
             <div className="inputbox">
                 <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} required="required" />
       <span>Email</span>
+    </div>
+</div>
+<div className="center">
+            <div className="inputbox">
+                <input type="number"value={phone} onChange={(e)=>setPhone(e.target.value)} required="required" />
+      <span>Phone Number</span>
     </div>
 </div>
 <div className="center">
