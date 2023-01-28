@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+no error in API and get seemless Experience so you have to install Moesif CORS extension ro avoid CROS Error 
+If you want 
+
 ## Available Scripts
 
 In the project directory, you can run:
